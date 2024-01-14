@@ -5,7 +5,7 @@ from .models import Profile
 
 class ProfileSerializer(serializers.ModelSerializer):
     """
-    Serializers for Profiles Model
+    Serializers for Profile Model
     """
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
