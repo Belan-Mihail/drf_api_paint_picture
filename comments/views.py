@@ -1,5 +1,5 @@
 from rest_framework import generics, permissions
-from drfapi.permissions import IsOwnerOrReadOnly
+from drf_paintpicture.permissions import IsOwnerOrReadOnly
 from .models import Comment
 from .serializers import CommentSerializer, CommentDetailSerializer
 
