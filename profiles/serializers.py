@@ -4,8 +4,11 @@ from .models import Profile
 
 
 class ProfileSerializer(serializers.ModelSerializer):
-
+    """
+    Serializers for Profiles Model
+    """
     owner = serializers.ReadOnlyField(source='owner.username')
+
 
     def get_is_owner(self, obj):
         request = self.context['request']
