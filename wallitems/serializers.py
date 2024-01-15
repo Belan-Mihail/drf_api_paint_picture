@@ -4,7 +4,9 @@ from .models import WallItem
 
 
 class WallItemSerializer(serializers.ModelSerializer):
-
+    """
+    Serializers for Wallitem Model
+    """
     owner = serializers.ReadOnlyField(source='owner.username')
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
