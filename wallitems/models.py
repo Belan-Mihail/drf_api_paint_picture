@@ -3,6 +3,9 @@ from django.contrib.auth.models import User
 
 
 class WallItem(models.Model):
+    """
+    Model for user Wall
+    """
     
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name="wallitem_owner")
     message = models.TextField(blank=False, null=False)
