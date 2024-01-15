@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import WallItem
 
-# Register your models here.
+
+admin.site.register(WallItem)
