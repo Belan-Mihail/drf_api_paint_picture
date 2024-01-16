@@ -2,6 +2,7 @@ from rest_framework import generics, permissions
 from drf_paintpicture.permissions import IsOwnerOrReadOnly
 from .models import WallItem
 from .serializers import WallItemSerializer
+from django_filters.rest_framework import DjangoFilterBackend
 
 
 class WallItemList(generics.ListCreateAPIView):
@@ -12,6 +13,15 @@ class WallItemList(generics.ListCreateAPIView):
     serializer_class = WallItemSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = WallItem.objects.all()
+    
+    
+    filter_backends = [
+        DjangoFilterBackend
+    ]
+    
+    filterset_fields = [
+        'owner__profile',
+    ]
 
 
     def perform_create(self, serializer):
