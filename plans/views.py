@@ -2,6 +2,7 @@ from rest_framework import generics, permissions
 from drf_paintpicture.permissions import IsOwnerOrReadOnly
 from .models import Plan
 from .serializers import PlanSerializer
+from django_filters.rest_framework import DjangoFilterBackend
 
 
 class PlanList(generics.ListCreateAPIView):
@@ -12,6 +13,15 @@ class PlanList(generics.ListCreateAPIView):
     serializer_class = PlanSerializer
     permission_classes = [IsOwnerOrReadOnly] 
     queryset = Plan.objects.all()
+    
+    
+    filter_backends = [
+        DjangoFilterBackend
+    ]
+    
+    filterset_fields = [
+        'owner__profile',
+    ]
 
 
     def perform_create(self, serializer):
