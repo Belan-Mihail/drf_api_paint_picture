@@ -64,9 +64,9 @@ REST_AUTH_SERIALIZERS = {
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'DEV' in os.environ
 
-ALLOWED_HOSTS = ['8000-belanmihail-drfapipaint-9qijozxa7c2.ws-eu107.gitpod.io', 'https://paint-picture-backend-6b0b98f6459e.herokuapp.com/']
+ALLOWED_HOSTS = ['8000-belanmihail-drfapipaint-9qijozxa7c2.ws-eu107.gitpod.io', 'paint-picture-backend-6b0b98f6459e.herokuapp.com']
 
 
 # Application definition
