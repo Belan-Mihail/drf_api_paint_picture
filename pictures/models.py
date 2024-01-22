@@ -21,7 +21,7 @@ class Picture(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField(blank=True)
     image = models.ImageField(
-        upload_to='images/', default='../default_post_jtlmh6', blank=True
+        upload_to='images/', default='../default_post_x6zdvo', blank=True
     )
     picture_category = models.CharField(
         max_length=32, choices=category_choices, default='other'

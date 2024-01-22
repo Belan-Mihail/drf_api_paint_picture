@@ -14,7 +14,7 @@ class Profile(models.Model):
     name = models.CharField(max_length=255, blank=True)
     content = models.TextField(blank=True)
     image = models.ImageField(
-        upload_to='images/', default='../default_profile_tco7do'
+        upload_to='images/', default='../default_profile_rg7ho0'
     )
     greeting = models.CharField(max_length=25, blank=True)
 
