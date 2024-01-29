@@ -21,6 +21,7 @@ class WallItemList(generics.ListCreateAPIView):
     
     filterset_fields = [
         'owner__profile',
+        'profile',
     ]
 
 
