@@ -31,5 +31,5 @@ class WallItemSerializer(serializers.ModelSerializer):
         model = WallItem
 
         fields = [
-            'id', 'owner', 'profile_id', 'profile_image', 'created_at', 'updated_at', 'message', 
+            'id', 'owner', 'profile_id', 'profile_image', 'created_at', 'updated_at', 'message', 'profile',
         ]
