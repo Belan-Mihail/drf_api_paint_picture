@@ -33,3 +33,9 @@ class WallItemSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'owner', 'profile_id', 'profile_image', 'created_at', 'updated_at', 'message', 'profile',
         ]
+
+class WallItemDetailSerializer(WallItemSerializer):
+    """
+    Serializer for the WallItems model used in Detail view
+    """
+    profile = serializers.ReadOnlyField(source='profile.id') 
