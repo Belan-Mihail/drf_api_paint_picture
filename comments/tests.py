@@ -26,3 +26,25 @@ class CommentListViewTests(APITestCase):
         self.assertEqual(picture1_comment.content, 'comment1')
         self.assertEqual(picture1_comment2.content, 'comment2')
         self.assertTrue(isinstance(picture1_comment, Comment))
+        
+    
+    def test_cant_list_comments_using_invalid_url(self):
+        response = self.client.get('/comment3s/')
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+       
+
+    def test_logged_in_user_can_create_comment(self):
+        self.client.login(username='user', password='pass')
+        picture1 = Picture.objects.get(id=1)
+        user = User.objects.get(username='user')
+        response = self.client.post('/comments/', {'picture': 1, 'content': 'comment3'})
+        count = Comment.objects.count()
+        picture1_comment3 = Comment.objects.get(id=3)
+        self.assertEqual(count, 3)
+        self.assertEqual(picture1_comment3.content, 'comment3')
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+    
+
+    def test_user_not_logged_in_cant_create_comment(self):
+        response = self.client.post('/comments/', {'picture': 1, 'content': 'comment4'})
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
