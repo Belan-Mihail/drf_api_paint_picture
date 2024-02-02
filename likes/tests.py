@@ -50,3 +50,45 @@ class LikesListViewTests(APITestCase):
     def test_user_not_logged_in_cant_create_comment(self):
         response = self.client.post('/likes/', {'picture': 1})
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+    
+    
+class LikesDetailViewTests(APITestCase):
+
+    def setUp(self):
+        user1 = User.objects.create_user(username='user1', password='pass')
+        user2 = User.objects.create_user(username='user2', password='pass')
+        user3 = User.objects.create_user(username='user3', password='pass')
+        picture = Picture.objects.create(owner=user1, title='a title')
+        picture_like1 = Likes.objects.create(owner=user1, picture_id=1)
+        picture_like2 = Likes.objects.create(owner=user2, picture_id=1)
+        
+    
+    def test_can_retrieve_comments_using_valid_id(self):
+        response = self.client.get('/likes/1/')
+        response2 = self.client.get('/likes/2/')
+
+        self.assertEqual(response.data['owner'], 'user1')
+        self.assertEqual(response2.data['owner'], 'user2')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response2.status_code, status.HTTP_200_OK)
+    
+    
+    def test_cant_retrieve_comment_using_invalid_id(self):
+        response = self.client.get('/likes/999/')
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+        
+    
+    def test_user_can_delete_own_likes(self):
+        self.client.login(username='user2', password='pass')
+        response = self.client.delete('/likes/2/')
+        count = Likes.objects.count()
+        self.assertEqual(count, 1)
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+    
+
+    def test_user_cant_delete_not_own_like(self):
+        self.client.login(username='user1', password='pass')
+        response = self.client.delete('/likes/2/')
+        count = Likes.objects.count()
+        self.assertEqual(count, 2)
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
