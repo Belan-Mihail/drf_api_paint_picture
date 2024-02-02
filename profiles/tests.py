@@ -64,3 +64,19 @@ class ProfileDetailViewTests(APITestCase):
         self.assertEqual(profile.name, '')
         self.assertNotEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+    
+    
+    def test_user_cant_delete_own_profile(self):
+        self.client.login(username='user1', password='pass')
+        response = self.client.delete('/profiles/1/')
+        count = Profile.objects.count()
+        self.assertEqual(count, 2)
+        self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
+    
+
+    def test_user_cant_delete_not_own_profile(self):
+        self.client.login(username='user1', password='pass')
+        response = self.client.delete('/profiles/2/')
+        count = Profile.objects.count()
+        self.assertEqual(count, 2)
+        self.assertEqual(response.status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
