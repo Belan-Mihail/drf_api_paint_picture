@@ -62,3 +62,20 @@ class PictureDetailViewTests(APITestCase):
     def test_cant_retrieve_picture_using_invalid_id(self):
         response = self.client.get('/posts/999/')
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+    
+    
+    def test_user_can_update_own_picture(self):
+        self.client.login(username='user1', password='pass')
+        response = self.client.put('/pictures/1/', {'title': 'a new title'})
+        picture = Picture.objects.filter(pk=1).first()
+        self.assertEqual(picture.title, 'a new title')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+    
+
+    def test_user_cant_update_not_own_picture(self):
+        self.client.login(username='user1', password='pass')
+        response = self.client.put('/pictures/2/', {'title': 'a new title'})
+        picture = Picture.objects.filter(pk=2).first()
+        self.assertEqual(picture.title, 'a title2')
+        self.assertNotEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
