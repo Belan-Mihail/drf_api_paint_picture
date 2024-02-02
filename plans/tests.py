@@ -137,3 +137,19 @@ class PlanDetailViewTests(APITestCase):
         self.assertNotEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
     
+    
+    def test_user_can_delete_own_plan(self):
+        self.client.login(username='user1', password='pass')
+        response = self.client.delete('/plans/1/')
+        count = Plan.objects.count()
+        self.assertEqual(count, 1)
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+    
+
+    def test_user_cant_delete_not_own_plan(self):
+        self.client.login(username='user1', password='pass')
+        response = self.client.delete('/plans/2/')
+        count = Plan.objects.count()
+        self.assertEqual(count, 2)
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+    
