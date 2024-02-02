@@ -48,7 +48,7 @@ class FollowersDetailViewTests(APITestCase):
         follower = Followers.objects.create(owner=user1, followed=user2)
         
     
-    def test_can_retrieve_wallitems_using_valid_id(self):
+    def test_can_retrieve_folowers_using_valid_id(self):
         response = self.client.get('/followers/1/')
 
 

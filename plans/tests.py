@@ -40,7 +40,7 @@ class PlanListViewTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
     
     
-    def test_logged_in_user_cant_create_plan_wit_invalid_date(self):
+    def test_logged_in_user_cant_create_plan_with_invalid_date(self):
         self.client.login(username='user1', password='pass')
         response = self.client.post('/plans/', {
             'plans_title': 'a test title',
@@ -51,7 +51,7 @@ class PlanListViewTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
     
     
-    def test_logged_in_user_cant_create_plan_wit_invalid_title_lengt(self):
+    def test_logged_in_user_cant_create_plan_with_invalid_title_length(self):
         self.client.login(username='user1', password='pass')
         response = self.client.post('/plans/', {
             'plans_title': 'a'*300,
@@ -62,7 +62,7 @@ class PlanListViewTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         
         
-    def test_logged_in_user_can_create_plan_without_dafault_value(self):
+    def test_logged_in_user_can_create_plan_without_default_value(self):
         self.client.login(username='user1', password='pass')
         response = self.client.post('/plans/', {
             'plans_title': 'a test title',

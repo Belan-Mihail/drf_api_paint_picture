@@ -47,7 +47,7 @@ class LikesListViewTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
     
 
-    def test_user_not_logged_in_cant_create_comment(self):
+    def test_user_not_logged_in_cant_create_like(self):
         response = self.client.post('/likes/', {'picture': 1})
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
     
@@ -63,7 +63,7 @@ class LikesDetailViewTests(APITestCase):
         picture_like2 = Likes.objects.create(owner=user2, picture_id=1)
         
     
-    def test_can_retrieve_comments_using_valid_id(self):
+    def test_can_retrieve_likes_using_valid_id(self):
         response = self.client.get('/likes/1/')
         response2 = self.client.get('/likes/2/')
 
@@ -73,7 +73,7 @@ class LikesDetailViewTests(APITestCase):
         self.assertEqual(response2.status_code, status.HTTP_200_OK)
     
     
-    def test_cant_retrieve_comment_using_invalid_id(self):
+    def test_cant_retrieve_likes_using_invalid_id(self):
         response = self.client.get('/likes/999/')
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
         
