@@ -48,3 +48,35 @@ class CommentListViewTests(APITestCase):
     def test_user_not_logged_in_cant_create_comment(self):
         response = self.client.post('/comments/', {'picture': 1, 'content': 'comment4'})
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+
+
+class CommentDetailViewTests(APITestCase):
+
+    def setUp(self):
+        user1 = User.objects.create_user(username='user1', password='pass')
+        user2 = User.objects.create_user(username='user2', password='pass')
+        picture1 = Picture.objects.create(
+            owner=user1, title='a title1', description='description1'
+        )
+        
+        picture1_comment = Comment.objects.create(owner=user1, picture_id=1, content='comment1')
+        picture1_comment2 = Comment.objects.create(owner=user2, picture_id=1, content='comment2')
+        
+    
+    def test_can_retrieve_comments_using_valid_id(self):
+        response = self.client.get('/comments/1/')
+        response2 = self.client.get('/comments/2/')
+
+        self.assertEqual(response.data['content'], 'comment1')
+        self.assertEqual(response.data['owner'], 'user1')
+        self.assertNotEqual(response.data['owner'], 'user2')
+        self.assertEqual(response2.data['content'], 'comment2')
+        self.assertEqual(response2.data['owner'], 'user2')
+        self.assertNotEqual(response2.data['owner'], 'user1')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response2.status_code, status.HTTP_200_OK)
+    
+    
+    def test_cant_retrieve_comment_using_invalid_id(self):
+        response = self.client.get('/comments/999/')
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
