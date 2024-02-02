@@ -84,10 +84,14 @@ class PictureDetailViewTests(APITestCase):
     def test_user_can_delete_own_picture(self):
         self.client.login(username='user1', password='pass')
         response = self.client.delete('/pictures/1/')
+        count = Picture.objects.count()
+        self.assertEqual(count, 1)
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
     
 
     def test_user_cant_delete_not_own_picture(self):
         self.client.login(username='user1', password='pass')
         response = self.client.delete('/pictures/2/')
+        count = Picture.objects.count()
+        self.assertEqual(count, 2)
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)

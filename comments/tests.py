@@ -97,3 +97,19 @@ class CommentDetailViewTests(APITestCase):
         self.assertEqual(comment.content, 'comment2')
         self.assertNotEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+    
+    
+    def test_user_can_delete_own_comment(self):
+        self.client.login(username='user1', password='pass')
+        response = self.client.delete('/comments/1/')
+        count = Comment.objects.count()
+        self.assertEqual(count, 1)
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+    
+
+    def test_user_cant_delete_not_own_comment(self):
+        self.client.login(username='user1', password='pass')
+        response = self.client.delete('/comments/2/')
+        count = Comment.objects.count()
+        self.assertEqual(count, 2)
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
