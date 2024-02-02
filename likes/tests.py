@@ -10,12 +10,12 @@ class LikesListViewTests(APITestCase):
     def setUp(self):
        user1 = User.objects.create_user(username='user1', password='pass')
        user2 = User.objects.create_user(username='user2', password='pass')
+       user3 = User.objects.create_user(username='user3', password='pass')
        picture = Picture.objects.create(owner=user1, title='a title')
        picture_like1 = Likes.objects.create(owner=user1, picture_id=1)
        picture_like2 = Likes.objects.create(owner=user2, picture_id=1)
        
 
-    
     def test_can_list_picture_likes(self):
         user = User.objects.get(username='user1')
         picture = Picture.objects.get(title='a title')
@@ -29,3 +29,24 @@ class LikesListViewTests(APITestCase):
         self.assertEqual(picture_like2.owner.username, 'user2')
         self.assertTrue(isinstance(picture_like1, Likes))
         self.assertTrue(isinstance(picture_like2, Likes))
+        
+
+    def test_cant_list_likes_using_invalid_url(self):
+        response = self.client.get('/like3/')
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+       
+
+    def test_logged_in_user_can_create_like(self):
+        self.client.login(username='user3', password='pass')
+        picture = Picture.objects.get(id=1)
+        response = self.client.post('/likes/', {'picture': 1})
+        count = Likes.objects.count()
+        picture_likes3 = Likes.objects.get(id=3)
+        self.assertEqual(count, 3)
+        self.assertEqual(picture_likes3.owner.username, 'user3')
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+    
+
+    def test_user_not_logged_in_cant_create_comment(self):
+        response = self.client.post('/likes/', {'picture': 1})
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
