@@ -85,3 +85,19 @@ class WallItemDetailViewTests(APITestCase):
         self.assertEqual(wallitem.message, 'message2')
         self.assertNotEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+    
+    
+    def test_user_can_delete_own_wallitem(self):
+        self.client.login(username='user1', password='pass')
+        response = self.client.delete('/wallitems/1/')
+        count = WallItem.objects.count()
+        self.assertEqual(count, 1)
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+    
+
+    def test_user_cant_delete_not_own_wallitem(self):
+        self.client.login(username='user1', password='pass')
+        response = self.client.delete('/wallitems/2/')
+        count = WallItem.objects.count()
+        self.assertEqual(count, 2)
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
