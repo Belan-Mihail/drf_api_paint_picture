@@ -51,7 +51,7 @@ class WallItemDetailViewTests(APITestCase):
         wallitem2 = WallItem.objects.create(owner=user2, profile_id=2, message='message2')
         
     
-    def test_can_retrieve_comments_using_valid_id(self):
+    def test_can_retrieve_wallitems_using_valid_id(self):
         response = self.client.get('/wallitems/1/')
         response2 = self.client.get('/wallitems/2/')
 
@@ -63,3 +63,25 @@ class WallItemDetailViewTests(APITestCase):
         self.assertNotEqual(response2.data['owner'], 'user1')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response2.status_code, status.HTTP_200_OK)
+    
+    
+    def test_cant_retrieve_wallitem_using_invalid_id(self):
+        response = self.client.get('/wallitems/999/')
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+        
+    
+    def test_user_can_update_own_wallitem(self):
+        self.client.login(username='user1', password='pass')
+        response = self.client.put('/wallitems/1/', {'message': 'I can change it'})
+        wallitem = WallItem.objects.filter(pk=1).first()
+        self.assertEqual(wallitem.message, 'I can change it')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+    
+
+    def test_user_cant_update_not_own_wallitem(self):
+        self.client.login(username='user1', password='pass')
+        response = self.client.put('/wallitems/2/', {'message': 'I cant change it'})
+        wallitem = WallItem.objects.filter(pk=2).first()
+        self.assertEqual(wallitem.message, 'message2')
+        self.assertNotEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
