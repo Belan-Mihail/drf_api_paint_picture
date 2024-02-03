@@ -230,3 +230,23 @@ category_choices =
    - validation: auto_now_add=True
 
 
+## Technologies Used
+
+### Languages & Frameworks
+
+- Python
+- Django
+
+### Libraries & Tools
+
+- [Django REST Framework](https://www.django-rest-framework.org/) was used this to build the back-end API
+- [Django AllAuth](https://django-allauth.readthedocs.io/en/latest/index.html) was used for user authentication
+- [Git](https://git-scm.com/) was used this for version control and to push the code to GitHub
+- [GitHub](https://github.com/) was used this as a remote repository to store project code
+- [Cloudinary](https://cloudinary.com/) was used to store default images for profiles and pictures
+- [Gitpod](https://gitpod.io/workspaces) was used this to host a virtual workspace
+- [Heroku](https://heroku.com) was used this was used to deploy the project into live environment
+- [ElephantSQL](https://www.elephantsql.com/) was used as the deployed project on Heroku uses an ElephantSQL database
+- [CI Python Linter](https://pep8ci.herokuapp.com/) was used for validation of python files.
+- [Psycopg2](https://www.psycopg.org/docs/) was used as a PostgreSQL database adapter for Python
+- [Pillow](https://pillow.readthedocs.io/en/stable/) was used for image processing and validation
