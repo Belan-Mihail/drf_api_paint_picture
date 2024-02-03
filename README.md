@@ -33,7 +33,7 @@ The following models were created to represent the database model structure of t
 - ForeignKey relation with the Likes model owner
 - ForeignKey relation with the Followers model owner
 
-#### Picture
+### Picture Model
 
 
 - The model was created to provide the user with the ability to create, view, edit and delete pictures on the site. this model contains the following fields
@@ -75,4 +75,36 @@ category_choices =
             ('abstraction', 'abstraction'),
             ('other', 'other'),
         
+
+### Plan Model
+
+- The model was created to provide the user with the ability to create, view, edit and delete pictures on the site. this model contains the following fields
+
+- owner
+   - type: ForeignKey(User)
+   - validation: on_delete=models.CASCADE, related_name="plan_owner"
+
+- created_at
+   - type: DateTimeField
+   - validation: auto_now_add=True
+
+- updated_at
+    - type: DateTimeField
+    - validation: auto_now=True
+
+- plans_title
+   - type: CharField
+   - validation: max_length=255, blank=False
+
+- plans_description
+   - type: TextField
+   - validation: max_length=300, blank=False 
+
+- plans_date
+   - type: DateField
+   - validation: -
+
+- until
+   - type: BooleanField
+   - validation: default=False 
 
