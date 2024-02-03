@@ -415,3 +415,29 @@ This project was the second time I used agile development methods. The importanc
 <details><summary>Tests</summary>
 <img src="docs/readme/validation/comments-tests.jpg" >
 </details>
+
+### Likes App
+
+<details><summary>Models</summary>
+<img src="docs/readme/validation/likes-models.jpg" >
+</details>
+
+<details><summary>Views</summary>
+<img src="docs/readme/validation/likes-views.jpg" >
+</details>
+
+<details><summary>Serializers</summary>
+<img src="docs/readme/validation/likes-serializers.jpg" >
+</details>
+
+<details><summary>Urls</summary>
+<img src="docs/readme/validation/likes-urls.jpg" >
+</details>
+
+<details><summary>Admin</summary>
+<img src="docs/readme/validation/likes-admin.jpg" >
+</details>
+
+<details><summary>Tests</summary>
+<img src="docs/readme/validation/likes-tests.jpg" >
+</details>

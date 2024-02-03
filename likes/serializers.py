@@ -8,9 +8,7 @@ class LikesSerializer(serializers.ModelSerializer):
     Serializer for the Like model
     The create method handles the unique constraint on 'owner' and 'picture'
     """
-
     owner = serializers.ReadOnlyField(source='owner.username')
-
 
     class Meta:
         model = Likes
@@ -18,7 +16,6 @@ class LikesSerializer(serializers.ModelSerializer):
         fields = [
             'id',  'owner', 'picture', 'created_at'
         ]
-    
 
     def create(self, validated_data):
         try:
@@ -27,4 +24,3 @@ class LikesSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError({
                 'detail': 'possible duplicate'
             })
-

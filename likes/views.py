@@ -15,6 +15,7 @@ class LikesList(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
+
 class LikeDetail(generics.RetrieveDestroyAPIView):
     """
     Retrieve a likes or delete it by id if you own it.
