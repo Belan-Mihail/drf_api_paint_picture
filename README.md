@@ -363,3 +363,29 @@ This project was the second time I used agile development methods. The importanc
 <details><summary>Tests</summary>
 <img src="docs/readme/validation/pictures-tests.jpg" >
 </details>
+
+### Plans App
+
+<details><summary>Models</summary>
+<img src="docs/readme/validation/plans-models.jpg" >
+</details>
+
+<details><summary>Views</summary>
+<img src="docs/readme/validation/plans-views.jpg" >
+</details>
+
+<details><summary>Serializers</summary>
+<img src="docs/readme/validation/plans-serializers.jpg" >
+</details>
+
+<details><summary>Urls</summary>
+<img src="docs/readme/validation/plans-urls.jpg" >
+</details>
+
+<details><summary>Admin</summary>
+<img src="docs/readme/validation/plans-admin.jpg" >
+</details>
+
+<details><summary>Tests</summary>
+<img src="docs/readme/validation/plans-tests.jpg" >
+</details>
