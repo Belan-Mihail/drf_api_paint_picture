@@ -164,3 +164,31 @@ category_choices =
 - content
    - type: TextField
    - validation: - 
+
+
+
+### WallItem Model
+
+- The model was created to provide the user with the ability to create, view, edit and delete wallitem on the site. this model contains the following fields
+
+- owner
+   - type: ForeignKey(User)
+   - validation: on_delete=models.CASCADE,
+   related_name="wallitem_owner" 
+
+- profile
+   - type: ForeignKey(Profile)
+   - validation: on_delete=models.CASCADE, blank=True, null=True 
+
+- created_at
+   - type: DateTimeField
+   - validation: auto_now_add=True
+
+- updated_at
+    - type: DateTimeField
+    - validation: auto_now=True
+
+- message
+   - type: TextField
+   - validation: blank=False, null=False
+
