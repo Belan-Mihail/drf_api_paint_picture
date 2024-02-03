@@ -20,6 +20,9 @@ This repository contains the API set up using Django REST Framework for the Pain
   - [Technologies Used](#technologies-used)
       1. [Languages & Frameworks](#languages--frameworks)
   - [Agile](#agile)
+  - [Validation](#validation)
+      1. [Drf Paint Picture](#drf-paint-picture)
+      1. [Profiles App](#profiles-app)
 
 
 ## User Stories
@@ -176,7 +179,6 @@ category_choices =
    - validation: - 
 
 
-
 ### WallItem Model
 
 - The model was created to provide the user with the ability to create, view, edit and delete wallitem on the site. this model contains the following fields
@@ -289,4 +291,50 @@ category_choices =
    </details>
 
 This project was the second time I used agile development methods. The importance of these principles is beyond doubt. There may have been certain inaccuracies in the use of all the principles of this methodology.
+
+## Validation
+
+### Drf Paint Picture
+
+<details><summary>Views</summary>
+<img src="docs/readme/validation/drf-views.jpg" >
+</details>
+
+<details><summary>Serializers</summary>
+<img src="docs/readme/validation/drf-serializers.jpg" >
+</details>
+
+<details><summary>Urls</summary>
+<img src="docs/readme/validation/drf-urls.jpg" >
+</details>
+
+<details><summary>Permissions</summary>
+<img src="docs/readme/validation/drf-permission.jpg" >
+</details>
+
+### Profiles App
+
+<details><summary>Models</summary>
+<img src="docs/readme/validation/profiles-models.jpg" >
+</details>
+
+<details><summary>Views</summary>
+<img src="docs/readme/validation/profiles-views.jpg" >
+</details>
+
+<details><summary>Serializers</summary>
+<img src="docs/readme/validation/profiles-serializers.jpg" >
+</details>
+
+<details><summary>Urls</summary>
+<img src="docs/readme/validation/profiles-urls.jpg" >
+</details>
+
+<details><summary>Admin</summary>
+<img src="docs/readme/validation/profiles-admin.jpg" >
+</details>
+
+<details><summary>Tests</summary>
+<img src="docs/readme/validation/profiles-tests.jpg" >
+</details>
 
