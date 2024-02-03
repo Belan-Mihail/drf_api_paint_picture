@@ -10,6 +10,16 @@ This repository contains the API set up using Django REST Framework for the Pain
 ## Table of Contents
   - [User Stories](#user-stories)
   - [Database](#database)
+       1. [User Model](#user-model)
+       2. [Profile Model](#profile-model)
+       3. [Picture Model](#picture-model)
+       4. [Plan Model](#plan-model)
+       5. [Comment Model](#comment-model)
+       6. [Likes Model](#likes-model)
+       7. [Followers Model](#followers-model)
+  - [Technologies Used](#technologies-used)
+      1. [Languages & Frameworks](#languages--frameworks)
+  - [Agile](#agile)
 
 
 ## User Stories
