@@ -78,7 +78,7 @@ category_choices =
 
 ### Plan Model
 
-- The model was created to provide the user with the ability to create, view, edit and delete pictures on the site. this model contains the following fields
+- The model was created to provide the user with the ability to create, view, edit and delete plans on the site. this model contains the following fields
 
 - owner
    - type: ForeignKey(User)
@@ -108,3 +108,27 @@ category_choices =
    - type: BooleanField
    - validation: default=False 
 
+
+### Comment Model
+
+- The model was created to provide the user with the ability to create, view, edit and delete comments on the site. this model contains the following fields
+
+- owner
+   - type: ForeignKey(User)
+   - validation: on_delete=models.CASCADE 
+
+- picture
+   - type: ForeignKey(Picture)
+   - validation: on_delete=models.CASCADE 
+
+- created_at
+   - type: DateTimeField
+   - validation: auto_now_add=True
+
+- updated_at
+    - type: DateTimeField
+    - validation: auto_now=True
+
+- content
+   - type: TextField
+   - validation: - 
