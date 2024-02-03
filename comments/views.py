@@ -5,7 +5,6 @@ from .serializers import CommentSerializer, CommentDetailSerializer
 from django_filters.rest_framework import DjangoFilterBackend
 
 
-
 class CommentList(generics.ListCreateAPIView):
     """
     List comments or create a comment if logged in.
@@ -13,17 +12,14 @@ class CommentList(generics.ListCreateAPIView):
     serializer_class = CommentSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Comment.objects.all()
-    
-    
+
     filter_backends = [
         DjangoFilterBackend
     ]
 
-
     filterset_fields = [
         'picture'
     ]
-
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)

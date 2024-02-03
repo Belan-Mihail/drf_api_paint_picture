@@ -389,3 +389,29 @@ This project was the second time I used agile development methods. The importanc
 <details><summary>Tests</summary>
 <img src="docs/readme/validation/plans-tests.jpg" >
 </details>
+
+### Comments App
+
+<details><summary>Models</summary>
+<img src="docs/readme/validation/comments-models.jpg" >
+</details>
+
+<details><summary>Views</summary>
+<img src="docs/readme/validation/comments-views.jpg" >
+</details>
+
+<details><summary>Serializers</summary>
+<img src="docs/readme/validation/comments-serializers.jpg" >
+</details>
+
+<details><summary>Urls</summary>
+<img src="docs/readme/validation/comments-urls.jpg" >
+</details>
+
+<details><summary>Admin</summary>
+<img src="docs/readme/validation/comments-admin.jpg" >
+</details>
+
+<details><summary>Tests</summary>
+<img src="docs/readme/validation/comments-tests.jpg" >
+</details>

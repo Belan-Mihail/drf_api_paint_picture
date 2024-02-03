@@ -10,7 +10,9 @@ class CommentSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
-    profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
+    profile_image = serializers.ReadOnlyField(
+        source='owner.profile.image.url'
+    )
     created_at = serializers.SerializerMethodField()
     updated_at = serializers.SerializerMethodField()
 
@@ -25,7 +27,9 @@ class CommentSerializer(serializers.ModelSerializer):
 # validate comments content
     def validate_content(self, value):
         if len(value) < 5:
-            raise serializers.ValidationError('Content must contain at least 6 characters')
+            raise serializers.ValidationError(
+                'Content must contain at least 6 characters'
+            )
         return value
 
     def get_is_owner(self, obj):
@@ -36,8 +40,9 @@ class CommentSerializer(serializers.ModelSerializer):
         model = Comment
 
         fields = [
-            'id', 'owner', 'profile_id', 'profile_image', 'created_at', 'updated_at', 'picture',
-            'content', 'is_owner', 
+            'id', 'owner', 'profile_id', 'profile_image',
+            'created_at', 'updated_at', 'picture', 'content',
+            'is_owner',
         ]
 
 
@@ -45,4 +50,4 @@ class CommentDetailSerializer(CommentSerializer):
     """
     Serializer for the Comment model used in Detail view
     """
-    picture = serializers.ReadOnlyField(source='picture.id') 
+    picture = serializers.ReadOnlyField(source='picture.id')
