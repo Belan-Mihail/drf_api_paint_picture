@@ -192,3 +192,41 @@ category_choices =
    - type: TextField
    - validation: blank=False, null=False
 
+
+### Likes Model
+
+- The model was created to provide the user with the ability to create, view and delete likes on the site. this model contains the following fields
+
+- owner
+   - type: ForeignKey(User)
+   - validation: on_delete=models.CASCADE,
+   
+
+- picture
+   - type: ForeignKey(Picture)
+   - validation: on_delete=models.CASCADE
+
+- created_at
+   - type: DateTimeField
+   - validation: auto_now_add=True
+
+
+### Followers Model
+
+- The model was created to provide the user with the ability to use followers functionality. this model contains the following fields
+
+- owner
+   - type: ForeignKey(User)
+   - validation: on_delete=models.CASCADE,
+    related_name='following'
+   
+
+- followed
+   - type: ForeignKey(User)
+   - validation: on_delete=models.CASCADE, related_name='followed'
+
+- created_at
+   - type: DateTimeField
+   - validation: auto_now_add=True
+
+
