@@ -21,3 +21,58 @@ The back-end section of the project focuses on its administration side and cover
 
 The following models were created to represent the database model structure of the application:
 <img src="docs/readme/database-diagram.jpg">
+
+### User Model
+
+- The User model contains information about the user. It is part of the Django allauth library.
+- One-to-one relation with the Profile model owner field
+- ForeignKey relation with the Picture model owner
+- ForeignKey relation with the Plan model owner
+- ForeignKey relation with the Comment model owner
+- ForeignKey relation with the Wallitem model owner
+- ForeignKey relation with the Likes model owner
+- ForeignKey relation with the Followers model owner
+
+#### Picture
+
+
+- The model was created to provide the user with the ability to create, view, edit and delete pictures on the site. this model contains the following fields
+
+- owner
+   - type: ForeignKey(User)
+   - validation: on_delete=models.CASCADE
+
+- created_at
+   - type: DateTimeField
+   - validation: auto_now_add=True
+
+- updated_at
+    - type: DateTimeField
+    - validation: auto_now=True
+
+- title
+   - type: CharField
+   - validation: max_length=255 
+
+- description
+   - type: TextField
+   - validation: blank=True 
+
+- image
+   - type: ImageField
+   - validation: upload_to='images/', default='../default_post_x6zdvo', blank=True
+
+- picture_category
+   - type: CharField
+   - validation: max_length=32, choices=category_choices, default='other' 
+
+- Following categories choices were added for user to select for an pictures:
+
+category_choices = 
+            ('landscapes', 'landscapes'),
+            ('animals', 'animals'),
+            ('plants', 'plants'),
+            ('abstraction', 'abstraction'),
+            ('other', 'other'),
+        
+
