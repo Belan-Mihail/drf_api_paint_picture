@@ -441,3 +441,55 @@ This project was the second time I used agile development methods. The importanc
 <details><summary>Tests</summary>
 <img src="docs/readme/validation/likes-tests.jpg" >
 </details>
+
+### Followers App
+
+<details><summary>Models</summary>
+<img src="docs/readme/validation/followers-models.jpg" >
+</details>
+
+<details><summary>Views</summary>
+<img src="docs/readme/validation/followers-views.jpg" >
+</details>
+
+<details><summary>Serializers</summary>
+<img src="docs/readme/validation/followers-serializers.jpg" >
+</details>
+
+<details><summary>Urls</summary>
+<img src="docs/readme/validation/followers-urls.jpg" >
+</details>
+
+<details><summary>Admin</summary>
+<img src="docs/readme/validation/followers-admin.jpg" >
+</details>
+
+<details><summary>Tests</summary>
+<img src="docs/readme/validation/followers-tests.jpg" >
+</details>
+
+### Wallitems App
+
+<details><summary>Models</summary>
+<img src="docs/readme/validation/wallitems-models.jpg" >
+</details>
+
+<details><summary>Views</summary>
+<img src="docs/readme/validation/wallitems-views.jpg" >
+</details>
+
+<details><summary>Serializers</summary>
+<img src="docs/readme/validation/wallitems-serializers.jpg" >
+</details>
+
+<details><summary>Urls</summary>
+<img src="docs/readme/validation/wallitems-urls.jpg" >
+</details>
+
+<details><summary>Admin</summary>
+<img src="docs/readme/validation/wallitems-admin.jpg" >
+</details>
+
+<details><summary>Tests</summary>
+<img src="docs/readme/validation/wallitems-tests.jpg" >
+</details>
