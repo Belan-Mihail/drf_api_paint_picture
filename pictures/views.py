@@ -5,7 +5,7 @@ from .models import Picture
 from .serializers import PictureSerializer
 from drf_paintpicture.permissions import IsOwnerOrReadOnly
 
-    
+
 class PictureList(generics.ListCreateAPIView):
     """
     List pictures or create a picture if logged in
@@ -36,7 +36,6 @@ class PictureList(generics.ListCreateAPIView):
         'comments_count',
         'likes__created_at',
     ]
-
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)

@@ -6,7 +6,7 @@ class Picture(models.Model):
     """
     Picture model for post-pictures content
     """
-    
+
     category_choices = [
             ('landscapes', 'landscapes'),
             ('animals', 'animals'),
@@ -27,10 +27,8 @@ class Picture(models.Model):
         max_length=32, choices=category_choices, default='other'
     )
 
-
     class Meta:
         ordering = ['-created_at']
-
 
     def __str__(self):
         return f'{self.id} {self.title}'
