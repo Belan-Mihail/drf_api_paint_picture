@@ -33,8 +33,40 @@ The following models were created to represent the database model structure of t
 - ForeignKey relation with the Likes model owner
 - ForeignKey relation with the Followers model owner
 
-### Picture Model
+### Profile Model
 
+- The model was created to create/delete profile for the user and to provide user with the ability to view, edit own profile on the site. this model contains the following fields
+
+- owner
+   - type: ForeignKey(User)
+   - validation: on_delete=models.CASCADE
+
+- created_at
+   - type: DateTimeField
+   - validation: auto_now_add=True
+
+- updated_at
+    - type: DateTimeField
+    - validation: auto_now=True
+
+- name
+   - type: CharField
+   - validation: max_length=255, blank=True 
+
+- content
+   - type: TextField
+   - validation: blank=True 
+
+- image
+   - type: ImageField
+   - upload_to='images/', default='../default_profile_rg7ho0'
+
+- greeting
+   - type: CharField
+   - validation: max_length=25, blank=True
+
+
+### Picture Model
 
 - The model was created to provide the user with the ability to create, view, edit and delete pictures on the site. this model contains the following fields
 
