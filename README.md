@@ -32,6 +32,10 @@ This repository contains the API set up using Django REST Framework for the Pain
    - [Testing](#testing)
       1. [Manual Testing](#manual-testing)
       2. [Automated Testing](#automated-testing)
+   - [Deployment](#deployment)
+      1. [Creating ElephantSQL Database](#creating-elephantsql-database)
+      2. [Workspace](#workspace)
+      3. [Deployment on Heroku](#deployment-on-heroku)
 
 
 
@@ -852,3 +856,39 @@ Followers |  Add "/followers/id" in url | Can see follower detail | Works as exp
 <img src="docs/readme/testing/automated/coverage-report.jpg">
 <img src="docs/readme/testing/automated/coverage-report1.jpg">
 </details>
+
+
+## Deployment
+
+### Creating ElephantSQL Database 
+
+1. Go to [ElephantSQL](https://customer.elephantsql.com/) and sign up or sign in to your account. Then click on the 'Create New Instance' button.
+2. Add your database name, select payment plan ('Tiny Turtle'). Then, click on 'Select Region' and choose you region. Then create the database instance.
+3. Click on the name of the database you created and copy database URL
+
+### Workspace
+1. Create Procfile (!important with capital P) with:
+   - release: python manage.py makemigrations && python manage.py migrate
+   - web: gunicorn YOUR_PROJECT_NAME.wsgi
+2. Update Requirements.txt file with data of libraries used for project
+3. Create env.py with confidential data eg. API keys, passwords, database and cloudinary urls.
+
+### Deployment on Heroku
+
+1. Go to [Heroku](https://heroku.com/). Login or create an account at Heroku
+2. Click "create new app" button
+3. Add an app name
+4. Select region
+5. Click "create app" button
+6. Open settings Tab and click on "reveal config var" button
+7. Add required configurations (key/value):
+   - key: ALLOWED_HOST; value: your heroku app name(drf api) with .herokuapp.com
+   - key: CLIENT_ORIGIN; value:  URL adress you demployment frontend app
+   - key: CLIENT_ORIGIN_DEV; value: Workspace host your frontend app
+   - key: CLOUDINARY_URL; value: your CLOUDINARY url adress
+   - key: DATABASE_URL; value: database URL  
+   - key: SECRET_KEY; value: your project secret key.
+8. Open Deploy Tab and choose GITHUB deployment method 
+9. Choose repositories you want to connect and click "connect" button
+10. Then click "Deploy Branch" button
+
