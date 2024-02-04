@@ -31,6 +31,7 @@ This repository contains the API set up using Django REST Framework for the Pain
       7. [Wallitems App](#wallitems-app)
    - [Testing](#testing)
       1. [Manual Testing](#manual-testing)
+      2. [Automated Testing](#automated-testing)
 
 
 
@@ -837,4 +838,17 @@ Followers |  Add "/followers/id" in url | Can see follower detail | Works as exp
     <img src="docs/readme/testing/manual/follower-detail.jpg">
     <br>
     </details>
+</details>
+
+
+### Automated testing
+
+- Automated testing was done using the Django Rest Framework APITestCase.
+
+- Coverage report for project was done and overall result was 97%
+
+<details><summary>Test Report</summary>
+<img src="docs/readme/testing/automated/auto-testing.jpg">
+<img src="docs/readme/testing/automated/coverage-report.jpg">
+<img src="docs/readme/testing/automated/coverage-report1.jpg">
 </details>
