@@ -671,3 +671,47 @@ Comment |  Add "/comments/id" in url | Can see comment detail | Works as expecte
     <br>
     </details>
 </details>
+
+
+**Test** | **Action** | **Expected Result** | **Actual Result**
+-------- | ------------------- | ------------------- | -----------------
+Plan | Create, update & delete plan | Plan can be created, edited or deleted | Works as expected
+
+<details><summary>Screenshots</summary>
+    <details><summary>Create plan</summary>
+    <img src="docs/readme/testing/manual/plan-create.jpg">
+    <br>
+    </details>
+    <details><summary>Update plan</summary>
+    <img src="docs/readme/testing/manual/plan-update.jpg">
+    <br>
+    </details>
+    <details><summary>Delete plan</summary>
+    <img src="docs/readme/testing/manual/plan-delete.jpg">
+    <br>
+    </details>
+</details>
+
+
+**Test** | **Action** | **Expected Result** | **Actual Result**
+-------- | ------------------- | ------------------- | -----------------
+Plan |  Add "/plans" in url | Can see plan list | Works as expected
+
+<details><summary>Screenshots</summary>
+    <details><summary>Plan list</summary>
+    <img src="docs/readme/testing/manual/plan-list.jpg">
+    <br>
+    </details>
+</details>
+
+
+**Test** | **Action** | **Expected Result** | **Actual Result**
+-------- | ------------------- | ------------------- | -----------------
+Plan |  Add "/plans/id" in url | Can see plan detail | Works as expected
+
+<details><summary>Screenshots</summary>
+    <details><summary>Plan Detail</summary>
+    <img src="docs/readme/testing/manual/plan-detail.jpg">
+    <br>
+    </details>
+</details>
