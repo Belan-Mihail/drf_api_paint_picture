@@ -75,6 +75,7 @@ ALLOWED_HOSTS = [
    os.environ.get('ALLOWED_HOST'),
    'localhost',
    "8000-belanmihail-drfapipaint-9qijozxa7c2.ws-eu107.gitpod.io",
+   "8000-belanmihail-drfapipaint-9qijozxa7c2.ws-eu108.gitpod.io",
 ]
 
 # Application definition

@@ -271,6 +271,7 @@ category_choices =
 - [CI Python Linter](https://pep8ci.herokuapp.com/) was used for validation of python files.
 - [Psycopg2](https://www.psycopg.org/docs/) was used as a PostgreSQL database adapter for Python
 - [Pillow](https://pillow.readthedocs.io/en/stable/) was used for image processing and validation
+- [Paint](https://getpaint.net/) was used for create default avatar and pictures image
 
 ## Agile 
 
@@ -513,3 +514,26 @@ The following tests were carried out on the app:
 ### Manual testing 
 
 - As an admin, I want to be able to create, edit and delete the users, pictures, comments, plans, wallitems, followers and likes, so that I can have a control over the content of the application and remove any potential inappropriate content
+
+**Test Model** | **Action** | **Expected Result** | **Actual Result**
+-------- | ------------------- | ------------------- | -----------------
+User | Create, update, delete user and change permissions | A user can be created, edited or deleted and User permissions can be updated | Works as expected
+
+<details><summary>Screenshots</summary>
+    <details><summary>Create user</summary>
+    <img src="docs/readme/testing/manual/user-create.jpg">
+    <br>
+    </details>
+    <details><summary>Update user</summary>
+    <img src="docs/readme/testing/manual/user-update.jpg">
+    <br>
+    </details>
+    <details><summary>Change permission</summary>
+    <img src="docs/readme/testing/manual/user-change-permission.jpg">
+    <br>
+    </details>
+    <details><summary>Delete user</summary>
+    <img src="docs/readme/testing/manual/user-delete.jpg">
+    <br>
+    </details>
+</details>
