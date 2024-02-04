@@ -584,3 +584,47 @@ Profile |  Add "/profiles/id" in url | Can see profile detail | Works as expecte
     </details>
 </details>
 
+
+**Test** | **Action** | **Expected Result** | **Actual Result**
+-------- | ------------------- | ------------------- | -----------------
+Picture | Create, update & delete | Picture can be created, edited or deleted | Works as expected
+
+<details><summary>Screenshots</summary>
+    <details><summary>Create picture</summary>
+    <img src="docs/readme/testing/manual/picture-create.jpg">
+    <br>
+    </details>
+    <details><summary>Update picture</summary>
+    <img src="docs/readme/testing/manual/picture-update.jpg">
+    <br>
+    </details>
+    <details><summary>Delete picture</summary>
+    <img src="docs/readme/testing/manual/picture-delete.jpg">
+    <br>
+    </details>
+</details>
+
+
+**Test** | **Action** | **Expected Result** | **Actual Result**
+-------- | ------------------- | ------------------- | -----------------
+Picture |  Add "/pictures" in url | Can see picture list | Works as expected
+
+<details><summary>Screenshots</summary>
+    <details><summary>Picture list</summary>
+    <img src="docs/readme/testing/manual/picture-list.jpg">
+    <br>
+    </details>
+</details>
+
+
+**Test** | **Action** | **Expected Result** | **Actual Result**
+-------- | ------------------- | ------------------- | -----------------
+Picture |  Add "/pictures/id" in url | Can see picture detail | Works as expected
+
+<details><summary>Screenshots</summary>
+    <details><summary>Picture Detail</summary>
+    <img src="docs/readme/testing/manual/picture-detail.jpg">
+    <br>
+    </details>
+</details>
+
