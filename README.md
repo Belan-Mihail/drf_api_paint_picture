@@ -628,3 +628,46 @@ Picture |  Add "/pictures/id" in url | Can see picture detail | Works as expecte
     </details>
 </details>
 
+
+**Test** | **Action** | **Expected Result** | **Actual Result**
+-------- | ------------------- | ------------------- | -----------------
+Comment | Create, update & delete comment | Comment can be created, edited or deleted | Works as expected
+
+<details><summary>Screenshots</summary>
+    <details><summary>Create comment</summary>
+    <img src="docs/readme/testing/manual/comment-create.jpg">
+    <br>
+    </details>
+    <details><summary>Update comment</summary>
+    <img src="docs/readme/testing/manual/comment-update.jpg">
+    <br>
+    </details>
+    <details><summary>Delete comment</summary>
+    <img src="docs/readme/testing/manual/comment-delete.jpg">
+    <br>
+    </details>
+</details>
+
+
+**Test** | **Action** | **Expected Result** | **Actual Result**
+-------- | ------------------- | ------------------- | -----------------
+Comment |  Add "/comments" in url | Can see comment list | Works as expected
+
+<details><summary>Screenshots</summary>
+    <details><summary>Comment list</summary>
+    <img src="docs/readme/testing/manual/comment-list.jpg">
+    <br>
+    </details>
+</details>
+
+
+**Test** | **Action** | **Expected Result** | **Actual Result**
+-------- | ------------------- | ------------------- | -----------------
+Comment |  Add "/comments/id" in url | Can see comment detail | Works as expected
+
+<details><summary>Screenshots</summary>
+    <details><summary>Comment Detail</summary>
+    <img src="docs/readme/testing/manual/comment-detail.jpg">
+    <br>
+    </details>
+</details>
