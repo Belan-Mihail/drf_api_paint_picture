@@ -537,3 +537,50 @@ User | Create, update, delete user and change permissions | A user can be create
     <br>
     </details>
 </details>
+
+<br>
+
+**Test** | **Action** | **Expected Result** | **Actual Result**
+-------- | ------------------- | ------------------- | -----------------
+Profile | Create (automatically when creating a user), update & delete | User profile can be created, edited or deleted | Works as expected
+
+<details><summary>Screenshots</summary>
+    <details><summary>Create profile (automatically when creating a user)</summary>
+    <img src="docs/readme/testing/manual/profile-create.jpg">
+    <img src="docs/readme/testing/manual/profile-create1.jpg">
+    <br>
+    </details>
+    <details><summary>Update profile</summary>
+    <img src="docs/readme/testing/manual/profile-update.jpg">
+    <br>
+    <details><summary>Delete profile</summary>
+    <img src="docs/readme/testing/manual/profile-delete.jpg">
+    <br>
+    </details>
+</details>
+
+<br>
+
+**Test** | **Action** | **Expected Result** | **Actual Result**
+-------- | ------------------- | ------------------- | -----------------
+Profile |  Add "/profiles" in url | Can see profile list | Works as expected
+
+<details><summary>Screenshots</summary>
+    <details><summary>Profile list</summary>
+    <img src="docs/readme/testing/manual/profile-list.jpg">
+    <br>
+    </details>
+</details>
+
+<br>
+
+**Test** | **Action** | **Expected Result** | **Actual Result**
+-------- | ------------------- | ------------------- | -----------------
+Profile |  Add "/profiles/id" in url | Can see profile detail | Works as expected
+
+<details><summary>Screenshots</summary>
+    <details><summary>Profile Detail</summary>
+    <img src="docs/readme/testing/manual/profile-detail.jpg">
+    <br>
+    </details>
+</details>
