@@ -760,3 +760,42 @@ Wallitem |  Add "/wallitems/id" in url | Can see wallitem detail | Works as expe
     <br>
     </details>
 </details>
+
+**Test** | **Action** | **Expected Result** | **Actual Result**
+-------- | ------------------- | ------------------- | -----------------
+Likes | Create & delete like | Like can be created, edited or deleted | Works as expected
+
+<details><summary>Screenshots</summary>
+    <details><summary>Create like</summary>
+    <img src="docs/readme/testing/manual/like-create.jpg">
+    <br>
+    </details>
+    <details><summary>Delete like</summary>
+    <img src="docs/readme/testing/manual/like-delete.jpg">
+    <br>
+    </details>
+</details>
+
+
+**Test** | **Action** | **Expected Result** | **Actual Result**
+-------- | ------------------- | ------------------- | -----------------
+Likes |  Add "/likes" in url | Can see like list | Works as expected
+
+<details><summary>Screenshots</summary>
+    <details><summary>Like list</summary>
+    <img src="docs/readme/testing/manual/like-list.jpg">
+    <br>
+    </details>
+</details>
+
+
+**Test** | **Action** | **Expected Result** | **Actual Result**
+-------- | ------------------- | ------------------- | -----------------
+Likes |  Add "/likes/id" in url | Can see like detail | Works as expected
+
+<details><summary>Screenshots</summary>
+    <details><summary>Likes Detail</summary>
+    <img src="docs/readme/testing/manual/like-detail.jpg">
+    <br>
+    </details>
+</details>
