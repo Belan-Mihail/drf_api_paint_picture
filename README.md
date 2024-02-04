@@ -715,3 +715,48 @@ Plan |  Add "/plans/id" in url | Can see plan detail | Works as expected
     <br>
     </details>
 </details>
+
+
+
+**Test** | **Action** | **Expected Result** | **Actual Result**
+-------- | ------------------- | ------------------- | -----------------
+Wallitem | Create, update & delete wallitem | Wallitem can be created, edited or deleted | Works as expected
+
+<details><summary>Screenshots</summary>
+    <details><summary>Create wallitem</summary>
+    <img src="docs/readme/testing/manual/wallitem-create.jpg">
+    <br>
+    </details>
+    <details><summary>Update wallitem</summary>
+    <img src="docs/readme/testing/manual/wallitem-update.jpg">
+    <br>
+    </details>
+    <details><summary>Delete wallitem</summary>
+    <img src="docs/readme/testing/manual/wallitem-delete.jpg">
+    <br>
+    </details>
+</details>
+
+
+**Test** | **Action** | **Expected Result** | **Actual Result**
+-------- | ------------------- | ------------------- | -----------------
+Wallitem |  Add "/wallitems" in url | Can see wallitem list | Works as expected
+
+<details><summary>Screenshots</summary>
+    <details><summary>Wallitem list</summary>
+    <img src="docs/readme/testing/manual/wallitem-list.jpg">
+    <br>
+    </details>
+</details>
+
+
+**Test** | **Action** | **Expected Result** | **Actual Result**
+-------- | ------------------- | ------------------- | -----------------
+Wallitem |  Add "/wallitems/id" in url | Can see wallitem detail | Works as expected
+
+<details><summary>Screenshots</summary>
+    <details><summary>Wallitem Detail</summary>
+    <img src="docs/readme/testing/manual/wallitem-detail.jpg">
+    <br>
+    </details>
+</details>
