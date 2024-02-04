@@ -763,7 +763,7 @@ Wallitem |  Add "/wallitems/id" in url | Can see wallitem detail | Works as expe
 
 **Test** | **Action** | **Expected Result** | **Actual Result**
 -------- | ------------------- | ------------------- | -----------------
-Likes | Create & delete like | Like can be created, edited or deleted | Works as expected
+Likes | Create & delete like | Like can be created or deleted | Works as expected
 
 <details><summary>Screenshots</summary>
     <details><summary>Create like</summary>
@@ -794,8 +794,47 @@ Likes |  Add "/likes" in url | Can see like list | Works as expected
 Likes |  Add "/likes/id" in url | Can see like detail | Works as expected
 
 <details><summary>Screenshots</summary>
-    <details><summary>Likes Detail</summary>
+    <details><summary>Like Detail</summary>
     <img src="docs/readme/testing/manual/like-detail.jpg">
+    <br>
+    </details>
+</details>
+
+**Test** | **Action** | **Expected Result** | **Actual Result**
+-------- | ------------------- | ------------------- | -----------------
+Followers | Create & delete follower | Follower can be created or deleted | Works as expected
+
+<details><summary>Screenshots</summary>
+    <details><summary>Create follower</summary>
+    <img src="docs/readme/testing/manual/follower-create.jpg">
+    <br>
+    </details>
+    <details><summary>Delete follower</summary>
+    <img src="docs/readme/testing/manual/follower-delete.jpg">
+    <br>
+    </details>
+</details>
+
+
+**Test** | **Action** | **Expected Result** | **Actual Result**
+-------- | ------------------- | ------------------- | -----------------
+Followers |  Add "/followers" in url | Can see follower list | Works as expected
+
+<details><summary>Screenshots</summary>
+    <details><summary>Follower list</summary>
+    <img src="docs/readme/testing/manual/follower-list.jpg">
+    <br>
+    </details>
+</details>
+
+
+**Test** | **Action** | **Expected Result** | **Actual Result**
+-------- | ------------------- | ------------------- | -----------------
+Followers |  Add "/followers/id" in url | Can see follower detail | Works as expected
+
+<details><summary>Screenshots</summary>
+    <details><summary>Follower Detail</summary>
+    <img src="docs/readme/testing/manual/follower-detail.jpg">
     <br>
     </details>
 </details>
