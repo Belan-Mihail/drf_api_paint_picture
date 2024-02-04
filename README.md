@@ -36,6 +36,9 @@ This repository contains the API set up using Django REST Framework for the Pain
       1. [Creating ElephantSQL Database](#creating-elephantsql-database)
       2. [Workspace](#workspace)
       3. [Deployment on Heroku](#deployment-on-heroku)
+      4. [Cloning the repository](#cloning-the-repository)
+      5. [Forking the GitHub Repository](#forking-the-github-repository)
+   - [Acknowledgements](#acknowledgements)
 
 
 
@@ -892,3 +895,27 @@ Followers |  Add "/followers/id" in url | Can see follower detail | Works as exp
 9. Choose repositories you want to connect and click "connect" button
 10. Then click "Deploy Branch" button
 
+### Cloning the repository
+1. On GitHub.com, navigate to the main page of the repository.
+2. click "Code" button.
+3. Select HTTPS, SSH, or Github CLI.
+4. Open Git Bash
+5. Change the current working directory to the one where you want the cloned directory
+6. Type git clone and paste the URL from the clipboard ($ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY) 
+7. Press Enter to create your local clone. 
+
+steps created using description on [GitHub Docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
+
+### Forking the GitHub Repository
+1. Go to the GitHub repository
+2. Click on Fork button
+
+## Acknowledgements
+
+I would like to express my sincere gratitude:
+
+  - My mentor Mo Shami for his advice and support.
+  - Tutor support team for help in solving technical problems and advice (especially Joanna)
+  - My daughter Alisa and my wife Snizhana for always giving me inspiration and strength to go forward.
+  - The government of the city of Hamburg and the employees of the job center Mitti for my opportunity to study at these courses.
+  - To all people who are in solidarity and support Ukraine
