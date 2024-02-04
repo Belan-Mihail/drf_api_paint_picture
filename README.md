@@ -538,7 +538,7 @@ User | Create, update, delete user and change permissions | A user can be create
     </details>
 </details>
 
-<br>
+
 
 **Test** | **Action** | **Expected Result** | **Actual Result**
 -------- | ------------------- | ------------------- | -----------------
@@ -553,13 +553,13 @@ Profile | Create (automatically when creating a user), update & delete | User pr
     <details><summary>Update profile</summary>
     <img src="docs/readme/testing/manual/profile-update.jpg">
     <br>
+    </details>
     <details><summary>Delete profile</summary>
     <img src="docs/readme/testing/manual/profile-delete.jpg">
     <br>
     </details>
 </details>
 
-<br>
 
 **Test** | **Action** | **Expected Result** | **Actual Result**
 -------- | ------------------- | ------------------- | -----------------
@@ -572,7 +572,6 @@ Profile |  Add "/profiles" in url | Can see profile list | Works as expected
     </details>
 </details>
 
-<br>
 
 **Test** | **Action** | **Expected Result** | **Actual Result**
 -------- | ------------------- | ------------------- | -----------------
@@ -584,3 +583,4 @@ Profile |  Add "/profiles/id" in url | Can see profile detail | Works as expecte
     <br>
     </details>
 </details>
+
