@@ -23,6 +23,15 @@ This repository contains the API set up using Django REST Framework for the Pain
   - [Validation](#validation)
       1. [Drf Paint Picture](#drf-paint-picture)
       1. [Profiles App](#profiles-app)
+      2. [Pictures App](#pictures-app)
+      3. [Plans App](#plans-app)
+      4. [Comments App](#comments-app)
+      5. [Likes App](#likes-app)
+      6. [Followers App](#followers-app)
+      7. [Wallitems App](#wallitems-app)
+   - [Testing](#testing)
+      1. [Manual Testing](#manual-testing)
+
 
 
 ## User Stories
@@ -493,3 +502,14 @@ This project was the second time I used agile development methods. The importanc
 <details><summary>Tests</summary>
 <img src="docs/readme/validation/wallitems-tests.jpg" >
 </details>
+
+
+## Testing
+
+The following tests were carried out on the app:
+1. Manual testing
+2. Automated testing
+
+### Manual testing 
+
+- As an admin, I want to be able to create, edit and delete the users, pictures, comments, plans, wallitems, followers and likes, so that I can have a control over the content of the application and remove any potential inappropriate content
